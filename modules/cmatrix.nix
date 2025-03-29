@@ -13,10 +13,10 @@ in {
       description = "Enable rainbow mode.";
     };
   };
-
   config = mkIf cfg.enable {
     home.packages = [ pkgs.cmatrix ];
     home.shellAliases.matrix =
       if cfg.rainbow then "cmatrix -r" else "cmatrix";
   };
+
 }
