@@ -8,6 +8,7 @@ with lib;
 
     options = {
       cowsay = mkOption {
+        enable = mkEnableOption "Enable cowsay pack";
         type = types.submoduleWithImports [ ./cowsay.nix ];
         default = {};
         description = "Cowsay pack options";
