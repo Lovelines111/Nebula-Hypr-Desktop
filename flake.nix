@@ -8,10 +8,6 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    homeModules.nebula = import ./modules/test.nix;
-
-    # Optional: make testing easier
-    packages.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.hello;
+    homeModules.nebula = import ./modules/nebula.nix;
   };
 }
-
