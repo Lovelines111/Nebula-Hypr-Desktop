@@ -6,7 +6,7 @@ let
   cfg = config;
 in {
   options = {
-    enable = mkEnableOption "Enable cmatrix pack";
+    enable = mkEnableOption "Enable cmatrix";
     rainbow = mkOption {
       type = types.bool;
       default = false;

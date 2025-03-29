@@ -6,20 +6,16 @@ with lib;
   options.programs.nebula = {
     enable = mkEnableOption "Enable the Nebula meta-module";
 
-    options = {
-      cowsay = mkOption {
-        type = types.submoduleWithImports [ ./cowsay.nix ];
-        default = {};
-        description = "Cowsay pack options";
-      };
+    cowsay = mkOption {
+      type = types.submoduleWithImports [ ./cowsay.nix ];
+      default = {};
+      description = "Cowsay module settings";
+    };
 
-      cmatrix = mkOption {
-        type = types.submoduleWithImports [ ./cmatrix.nix ];
-        default = {};
-        description = "Cmatrix pack options";
-      };
+    cmatrix = mkOption {
+      type = types.submoduleWithImports [ ./cmatrix.nix ];
+      default = {};
+      description = "Cmatrix module settings";
     };
   };
-
-  # No `config = {}` block is needed here since submodules do their own thing
 }

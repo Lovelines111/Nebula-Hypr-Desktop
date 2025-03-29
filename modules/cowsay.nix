@@ -6,7 +6,7 @@ let
   cfg = config;
 in {
   options = {
-    enable = mkEnableOption "Enable cowsay pack";
+    enable = mkEnableOption "Enable cowsay";
     greeting = mkOption {
       type = types.str;
       default = "Welcome to Nebula!";
