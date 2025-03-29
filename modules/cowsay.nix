@@ -1,8 +1,12 @@
+# modules/cowsay.nix
 { config, lib, pkgs, ... }:
 
-{
-  config = {
+with lib;
+
+let
+  cfg = config.programs.nebula.options.cowsay;
+in {
+  config = mkIf cfg.enable {
     home.packages = [ pkgs.cowsay ];
-    home.shellAliases.nebula = "cowsay 'Welcome to Nebula!'";
   };
 }
