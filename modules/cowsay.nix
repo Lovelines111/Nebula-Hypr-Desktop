@@ -1,9 +1,21 @@
 { config, lib, pkgs, ... }:
 
-{
-  config = {
+with lib;
+
+let
+  cfg = config;
+in {
+  options = {
+    enable = mkEnableOption "Enable cowsay pack";
+    greeting = mkOption {
+      type = types.str;
+      default = "Welcome to Nebula!";
+      description = "Greeting message for cowsay.";
+    };
+  };
+
+  config = mkIf cfg.enable {
     home.packages = [ pkgs.cowsay ];
-    home.shellAliases.nebula = "cowsay 'Welcome to Nebula!'";
+    home.shellAliases.nebula = "cowsay '${cfg.greeting}'";
   };
 }
-
